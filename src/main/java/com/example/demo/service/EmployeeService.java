@@ -6,6 +6,8 @@ import com.example.demo.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
     @Autowired
@@ -20,6 +22,10 @@ public class EmployeeService {
         employee.setEmpPhone(employeeDto.getEmpPhone());
 
         return employeeRepo.save(employee);
+    }
+   public List<Employee> findAllEmployee(){
+        return employeeRepo.findAll();
+
     }
 
 }
